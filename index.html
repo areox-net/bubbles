@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>d3.js example | circle packing in a rectangle</title>
+
+    <!-- jQuery 1.11.0 -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- D3.js v3 -->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- D3Bubbles libraries -->
+    <script src="lib/d3bubbles.js"></script>
+    <!-- D3Bubbles stylesheet -->
+    <link rel="stylesheet" href="lib/d3bubbles.css">
+    
+</head>
+<body>
+
+<div id="example">
+    <div class="plot"></div>
+</div>
+
+
+<script type="text/javascript">
+var bubbles = new D3Bubbles({
+    width: 'auto',
+    height: 300,
+    wrapper: '#example',
+    container: '#example .plot',
+    bubbles: {
+        bubbles_per_px: 0.02,
+        bubbles_max: 'auto',
+    },
+    radius: {
+        min:28,
+        max:65
+    },
+    colors: {
+        bubbles:['#c9ad7d'],
+        texts:['#FFF'],
+    },
+    features: {
+        dragmove: true,
+        overflow: false,
+        fit_texts: false,
+    },
+});
+
+var data = [
+{name: "love", radius: 186, label: "186 posts", type: "hashtag"},
+{name: "code", radius: 67, label: "67 posts", type: "keyword"},
+{name: "sudei", radius: 53, label: "53 posts", type: "hashtag"},
+];
+
+bubbles.init();
+bubbles.visualize();
+
+
+</script>
+
+</body>
+</html>
